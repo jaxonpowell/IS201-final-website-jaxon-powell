@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is the Bro Bro's 9 Form Page">
+
+  <!-- Favicons (The picture that appears on your browser tabs) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="./browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@1,300&family=Redressed&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <title>Form</title>
+  <style>
+    img {
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body class="form">
+  <div class="main-menu">
+    <div class="menu-icon">
+      <svg viewbox="0 0 60 60" width="60px" height="60px">
+        <line x1="5%" y1="50%" x2="95%" y2="50%" />
+        <line x1="5%" y1="50%" x2="95%" y2="50%" />
+      </svg>
+    </div>
+    <nav>
+      <!--<h2 class="hidden">Main Menu</h2>-->
+      <!--This is for accesibility. It's so that a screen reader can know it's the main menu-->
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="">Form</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Catering: Request a Quote</h1>
+    <section>
+      <img src="../images/BroBro's9SVG.svg" <form action="">
+      <form>
+        <label for="first-name">First Name:</label>
+        <input type="text" name="first" id="first-name">
+        <label for="email">Your email:</label>
+        <input type="email" name="email" id="email">
+        <label for="phone">Cell number:</label>
+        <input type="tel" name="phone" id="phone">
+        <label for="birthdate">Date of Event:</label>
+        <input type="date" name="birthdate" id="birthdate">
+        <label for="smoothClr">Color Theme of Event: </label>
+        <input id="smoothClr" name="smoothClr" type="color">
+        <label for="chunky">How much do you love frozen treats?</label>
+        <input type="range" id="chunky" name="chunky" list="tickmarks" value="0">
+        <datalist id="tickmarks">
+          <option value="0" label="0%"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50" label="50%"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100" label="100%"></option>
+        </datalist>
+
+        <fieldset>
+          <legend>Do you want the frozen treats dipped?</legend>
+          <input type="radio" id="MilkChocolate" name="dipped" value="MilkChocolate" checked>
+          <label for="MilkChocolate">Milk Chocolate</label>
+
+          <input type="radio" id="WhiteChocolate" name="dipped" value="WhiteChocolate">
+          <label for="WhiteChocolate">White Chocolate</label>
+
+          <input type="radio" id="almond" name="dipped" value="DarkChocolate">
+          <label for="DarkChocolate">Dark Chocolate</label>
+
+          <input type="radio" id="NonDipped" name="dipped" value="NonDipped">
+          <label for="NonDipped">Non Dipped</label>
+        </fieldset>
+
+        <fieldset>
+          <legend class="question">What toppings would you like on your treats? (Check all that apply)</legend>
+          <input type="checkbox" id="Fruit" name="Toppings" value="Fruit">
+          <label for="Fruit">Fruit</label>
+
+          <input type="checkbox" id="Candy" name="Toppings" value="Candy">
+          <label for="Candy">Candy</label>
+
+          <input type="checkbox" id="Cookies" name="Toppings" value="Cookies">
+          <label for="Cookies">Cookies</label>
+
+          <input type="checkbox" id="NoToppings" name="Toppings" value="NoToppings">
+          <label for="NoToppings">No Toppings</label>
+        </fieldset>
+
+
+        <label for="customerStyle">How many people are you expecting?</label>
+        <select name="customerStyle" id="customerStyle">
+          <option value="50">50</option>
+          <option value="50-100">50-100</option>
+          <option value="100-150">100-150</option>
+          <option value="150+">More than 150</option>
+        </select>
+        <button onclick="changeBackground()"> Save </button>
+      </form>
+    </section>
+
+  </main>
+
+  <script>
+    // EXPLANATION:
+    //   line 1 - wait until the DOM Content is loaded before doing anything. If you add this at the end of <body>, you don't need this necessarily, but I figure it can't hurt. 
+    //   line 2 - find .menu-icon in the document (the current HTML page) and give it something to do when it is clicked 
+    //   line 3 - when .menu-icon is clicked, find .main-menu and toggle the .menu-show class -- if .main-menu has a .menu-show class, remove it, else add it */
+
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".menu-icon").addEventListener("click", () => {
+        document.querySelector(".main-menu").classList.toggle("menu-show");
+      });
+    });
+  </script>
+  <script>
+    function changeBackground() {
+      alert("Your data is saved");
+      document.body.style.backgroundColor = document.getElementById("smoothClr").value;
+    }
+  </script>
+
+</body>
+
+</html>

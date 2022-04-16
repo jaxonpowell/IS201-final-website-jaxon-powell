@@ -1,0 +1,712 @@
+:root {
+  --text-color: #333;
+  --heading-color: #000;
+  --button-color: #34a4eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  font-family: "Redressed", cursive;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading-color);
+  font-family: "Noto Serif Display", serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+article {
+  margin-bottom: 3rem;
+}
+
+article img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  transition: color 500ms ease;
+}
+
+main {
+  /* align-self: center; */
+  max-width: 45rem;
+  padding: 1rem;
+  align-self: center;
+}
+
+aside {
+  background-color: lightblue;
+}
+
+a:hover {
+  color: darkgoldenrod;
+}
+
+picture img {
+  width: 100%;
+}
+
+form {
+  display: grid;
+  font-size: 1.75rem;
+}
+
+/* Start of lights on and off switch on the contact form css */
+
+.bg {
+  background-color: rgb(0, 0, 0);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+  width: 100%;
+  z-index: -1;
+}
+
+.lightSwitchText {
+  margin: auto;
+  margin-top: 2vh;
+  color: rgb(0, 90, 117);
+}
+
+.lightSwitch {
+  border: 0.4rem solid #1b1f1e;
+  border-radius: 3.8rem;
+  background-color: #3b3f3e;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  height: 3.8rem;
+  overflow: hidden;
+  position: relative;
+  transition: 1s;
+  width: 110px;
+  margin: auto;
+  margin-top: 3vh;
+}
+
+.lightSwitch::before {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: 1s;
+  background-color: #fefffa;
+  border: 0.4rem solid #e2e4d9;
+  border-radius: 3.8rem;
+  box-shadow: inset -3px -3px 10px #e2e4d9;
+  box-sizing: border-box;
+  height: calc(3rem - 4px);
+  left: 2px;
+  bottom: 2px;
+  width: calc(3rem - 4px);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked + .lightSwitch {
+  background-color: #99e0f6;
+  border-color: #8ab5c8;
+}
+input[type="checkbox"]:checked + .lightSwitch::before {
+  background-color: #fedc6e;
+  border-color: #c5c86f;
+  box-shadow: inset 3px 3px 10px #fff86e;
+  left: calc(100% - 3rem);
+}
+input[type="checkbox"]:checked + .lightSwitch + .bg {
+  background-color: #f2f2f2;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+/* End of lights on and off switch on the contact form css */
+
+.form img {
+  max-width: 400px;
+}
+
+.form main {
+  margin-top: 4rem;
+  max-width: 80rem;
+}
+
+.form fieldset {
+  display: grid;
+  border: none;
+  padding: 0;
+  grid-column-gap: 1rem;
+  align-items: center;
+  grid-template-columns: min-content 1fr;
+}
+
+.form legend {
+  grid-column-end: span 2;
+}
+
+form > input,
+fieldset,
+select {
+  margin-bottom: 1rem;
+}
+
+.form input[type="radio"],
+.form input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid black;
+  position: relative;
+}
+
+.form input[type="radio"]:hover,
+.form input[type="checkbox"]:hover {
+  box-shadow: 0 0 5px black;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="radio"]::after,
+.form input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+input[type="radio"]::after {
+  width: 16px;
+  height: 16px;
+  background-color: black;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transform: scale(0);
+  transition: transform 200ms;
+}
+
+.form input[type="checkbox"]::after {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 6px;
+  height: 12px;
+  transform: rotate(38deg);
+  top: 1px;
+  left: 6px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+input[type="radio"]:checked::after {
+  transform: scale(1);
+}
+
+.form input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+.button {
+  display: inline-block;
+  color: var(--button-color);
+  border: 1px solid var(--button-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  user-select: none; /* This is so that the user cannot select the text in the button */
+
+  transition: background-color 500ms ease;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: var(--button-color);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 0.8rem;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+
+  display: block;
+  height: 3px;
+  background-color: grey;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+
+  transform: scaleX(0);
+  transition: transform 200ms;
+  transform-origin: right;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transition: transform 0ms;
+  transform-origin: left;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1;
+  color: #fff;
+  margin: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.hero p {
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  text-align: center;
+  margin: 0;
+}
+
+.hero img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  /* padding: 0 1rem; */
+  max-width: 45rem;
+  align-self: center;
+}
+
+.cards a {
+  cursor: pointer;
+  display: block;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  aspect-ratio: 4 / 3;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.5rem;
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  padding: 0.5rem;
+  margin: 0;
+  z-index: 1;
+
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.card:hover p {
+  opacity: 1; /*  */
+}
+
+.loader {
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  border: 16px solid rgba(124, 124, 124, 0.4);
+  border-left: 16px solid #4eb2ff;
+  animation: load 900ms infinite linear;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel .image-wrapper {
+  order: -1;
+}
+
+/*Start of responsive menu CSS*/
+.main-menu .menu-icon {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+}
+
+.main-menu svg {
+  stroke: black;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  padding: 12px;
+}
+
+.main-menu svg line {
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.main-menu svg line:first-child {
+  transform: translateY(8px);
+}
+
+.main-menu svg line:last-child {
+  transform: translateY(-8px);
+}
+
+.menu-show .menu-icon {
+  background-color: transparent;
+}
+
+.menu-show svg line {
+  stroke: var(--floral-white);
+  stroke-width: 5px;
+}
+
+.menu-show svg line:first-child {
+  transform: rotate(135deg);
+}
+
+.menu-show svg line:last-child {
+  transform: rotate(-135deg);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: white;
+  transform: translateX(-100vw);
+  transition: transform 400ms;
+
+  z-index: 2;
+}
+
+.menu-show nav {
+  transform: translateX(0);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 80rem;
+}
+
+nav a {
+  display: block;
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: rgb(0, 105, 124);
+}
+
+nav a:not([href]) {
+  color: black;
+}
+
+nav a[href]:hover {
+  color: darkgoldenrod;
+}
+
+@media (min-width: 601px) {
+  .panel {
+    flex-direction: row;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 60%;
+  }
+
+  .panel .image-wrapper {
+    flex: 1 1 40%;
+  }
+
+  .panel h2 {
+    margin-top: 0;
+  }
+
+  /* main menu css */
+  .main-menu .menu-icon {
+    display: none;
+  }
+
+  /* copied nav css */
+  .hero {
+    position: relative;
+  }
+
+  .form main,
+  .about main {
+    margin-top: 0rem;
+  }
+
+  nav {
+    position: static;
+    display: block;
+    transform: none;
+
+    background-color: transparent;
+    margin: 2vh 0rem 2vh;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+
+    font-size: 25px;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+      sans-serif;
+
+    list-style: none;
+    padding: 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 1vh;
+    position: relative;
+  }
+
+  nav a:not([href]) {
+    color: var(--roman-silver);
+  }
+
+  nav a::after {
+    content: "";
+
+    display: block;
+    height: 3px;
+    background-color: grey;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 7px;
+
+    transform: scaleX(0);
+    transition: transform 300ms;
+    transform-origin: right;
+  }
+
+  nav a[href]:hover {
+    color: darkgoldenrod;
+  }
+
+  nav a[href]:hover::after {
+    transform: scaleX(1);
+    transition: transform 500ms;
+    transform-origin: left;
+  }
+
+  .form form {
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  form > label {
+    justify-self: end;
+  }
+
+  label[for="chunky"],
+  label[for="customerStyle"] {
+    justify-self: start;
+  }
+
+  label[for="chunky"],
+  input[type="range"],
+  label[for="customerStyle"],
+  fieldset,
+  select,
+  button {
+    grid-column-start: 2;
+  }
+
+  button {
+    justify-self: start;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 40%;
+  }
+
+  .panel {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .panel .text-content {
+    flex: 1 1 60%;
+  }
+  .panel .image-wrapper {
+    order: 0;
+    flex: 1 1 40%;
+  }
+  .panel .left {
+    order: -4;
+  }
+}
+
+@media (min-width: 850px) {
+  .cards {
+    flex-wrap: nowrap;
+  }
+  .card p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero {
+    height: 91.5vh;
+  }
+  .hero img {
+    height: 91.5vh;
+    object-fit: cover;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 50%;
+  }
+
+  .panel .image-wrapper {
+    flex: 1 1 50%;
+  }
+
+  .form section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form img {
+    flex: 1 1 20%;
+    min-width: 100px;
+  }
+
+  form {
+    flex: 1 1 80%;
+  }
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
